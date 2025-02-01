@@ -11,7 +11,6 @@ int main() {
 
     // Начинаем игру
     game.startGame();
-    game.whoFirstRun();
 
     return 0;
 }
