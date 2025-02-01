@@ -16,6 +16,21 @@ public:
         players.push_back(player);
     }
 
+    int whoFirstRun() {
+        std::vector<Tile> whoFirst;
+
+        for (int i = 0; i < players.size(); i++) {
+            whoFirst.push_back(tiles.back());
+            shuffleTiles();
+
+            std::cout << players[i].name;
+            whoFirst[i].display();
+            std::cout << std::endl;
+        }
+
+        return 0;
+    }
+
     void dealTiles(int numberOfTiles) {
         for (auto& player : players) {
             for (int i = 0; i < numberOfTiles; ++i) {

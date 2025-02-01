@@ -7,9 +7,9 @@ enum COLOR {
     Red,
     Blue,
     Yellow,
-    Black
+    Black,
+    Reset
 };
-
 
 class Tile {
 public:
@@ -20,8 +20,9 @@ public:
     Tile(int num, COLOR col) : number(num), color(col) {}
 
     void display() const {
-        std::cout << colors_.at(color) << " "  << GetNumber(number);
+        std::cout << colors_.at(color)<< " "  << GetNumber(number) << colors_.at(COLOR::Reset);
     }
+
 private:
 
     std::string GetNumber(const int& num) const {
@@ -29,5 +30,12 @@ private:
         return num < 10 ? "0" + number : number;
     }
 
-    std::map<COLOR, std::string> colors_ = {{Red, "Red"}, {Blue,"Blue"}, {Yellow,"Yellow"},{Black,"Black"}};
+    std::map<COLOR, std::string> colors_ = {
+        {Red, "\033[31m"},
+        {Blue,"\033[34m"},
+        {Yellow,"\033[33m"},
+        {Black,"\033[37m"},
+        {Reset, "\033[0m"}
+    };
+
 };

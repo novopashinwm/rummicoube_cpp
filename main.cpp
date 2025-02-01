@@ -1,14 +1,5 @@
-#include <iostream>
-#include <vector>
 #include <string>
-#include <algorithm>
-#include <ctime>
-#include <cstdlib>
-
 #include "game.h"
-
-// Класс, представляющий игру
-
 
 // Основная программа
 int main() {
@@ -20,6 +11,7 @@ int main() {
 
     // Начинаем игру
     game.startGame();
+    game.whoFirstRun();
 
     return 0;
 }

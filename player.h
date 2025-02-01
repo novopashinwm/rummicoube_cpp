@@ -9,7 +9,12 @@ public:
     std::string name;
     std::vector<Tile> hand;
 
-    Player(std::string n) : name(n) {}
+    //Можно ли выкладывать фишки (для этого надо набрать 30 очков в группах или рядах)
+    bool isAllowGamming = false;
+
+    Player(std::string n) : name(n) {
+
+    }
 
     void addTile(Tile tile) {
         hand.push_back(tile);
